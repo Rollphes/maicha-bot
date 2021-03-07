@@ -9,6 +9,7 @@ const client = new Client({
 });
 client.commands = new Collection();
 client.abbs = new Collection();
+client.categorys = new Array();
 const PORT = process.env.PORT;
 
 // Run the command loader
