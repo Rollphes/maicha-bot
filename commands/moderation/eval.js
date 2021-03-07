@@ -2,7 +2,6 @@ const {
   uuid,
   rnd
 } = require("../../functions.js");
-const ytdl = require('ytdl-core');
 
 module.exports = {
   name: "e",
