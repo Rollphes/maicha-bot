@@ -4,7 +4,7 @@ const {
 var i = 0;
 module.exports = {
   name: "help",
-  description: "helpコマンドです。\n各コマンドの略語は/help `コマンド名`で確認できます",
+  description: "helpコマンドです。\n各コマンドの略語はm!help `コマンド名`で確認できます",
   run: (client, message, args) => {
     if (typeof args[0] != "undefined") {
       const cmd = args[0].toLowerCase();

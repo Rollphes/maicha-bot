@@ -23,7 +23,7 @@ client.on('ready', () => {
 });
 
 client.on('message', async(message) => {
-  const prefix = '/';
+  const prefix = 'm!';
 
 
   if (message.author.bot) return;
