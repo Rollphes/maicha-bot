@@ -20,12 +20,12 @@ module.exports = {
         let abbs_description = "";
         if (typeof command.abb != "undefined") {
           command.abb.forEach(abb=> {
-            abbs_description += "`/"+abb+"` ";
+            abbs_description += "`m!"+abb+"` ";
           });
         }
         const embed = new MessageEmbed()
         .setTitle('__取説__')
-        .setDescription("**/" + command.name + "**" + "\n> " + command.description.replace(/\n/g, "\n> ") + ((abbs_description != "")?("\n> 略語:"+abbs_description): ""));
+        .setDescription("**m!" + command.name + "**" + "\n> " + command.description.replace(/\n/g, "\n> ") + ((abbs_description != "")?("\n> 略語:"+abbs_description): ""));
         message.channel.send(embed);
       } else {
         message.channel.send("そのようなコマンドはありません");
