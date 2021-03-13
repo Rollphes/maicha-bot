@@ -39,7 +39,7 @@ module.exports = {
       if (command.description == "") {
         return;
       }
-      commands_description += "**/" + command.name + "**" + "\n> " + command.description.replace(/\n/g, "\n> ") + "\n";
+      commands_description += "**m!" + command.name + "**" + "\n> " + command.description.replace(/\n/g, "\n> ") + "\n";
     });
     const embed = new MessageEmbed()
     .setTitle('__取説:__**'+client.categorys[i]+'**')
@@ -73,7 +73,7 @@ module.exports = {
           if (command.description == "") {
             return;
           }
-          commands_description += "**/" + command.name + "**" + "\n> " + command.description.replace(/\n/g, "\n> ") + "\n";
+          commands_description += "**m!" + command.name + "**" + "\n> " + command.description.replace(/\n/g, "\n> ") + "\n";
         });
         const embed = new MessageEmbed()
         .setTitle('__取説:__**'+client.categorys[i]+'**')
@@ -100,7 +100,7 @@ module.exports = {
           if (command.description == "") {
             return;
           }
-          commands_description += "**/" + command.name + "**" + "\n> " + command.description.replace(/\n/g, "\n> ") + "\n";
+          commands_description += "**m!" + command.name + "**" + "\n> " + command.description.replace(/\n/g, "\n> ") + "\n";
         });
         const embed = new MessageEmbed()
         .setTitle('__取説:__**'+client.categorys[i]+'**')
