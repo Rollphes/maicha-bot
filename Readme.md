@@ -1,7 +1,7 @@
 ## 作成途中です。ご参考までに。
 ## コマンド一覧
 
-__category : fun __ 
+__category : fun__ 
 
 ###### nube 
  └(՞ةڼ◔)」イヒーｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗ
@@ -13,7 +13,7 @@ __category : fun __
 [回数] [実行する数の幅] で実行できます。
 やりすぎには注意。
 
-__category : info __
+__category : info__
 
 ###### help
 helpコマンドです。
@@ -22,7 +22,7 @@ helpを表示します。 m!help [コマンド名] とやったらコマンド�
 ###### ping
 サーバーとの接続時間を調べます。
 
-__category : moderation __
+__category : moderation__
 
 ###### say
 m!say [文字] でbotがしゃべります。
