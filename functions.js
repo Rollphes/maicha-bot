@@ -1,3 +1,4 @@
+const ytdl = require("ytdl-core");
 module.exports = {
   uuid: () => {
     var uuid = "",
@@ -17,5 +18,37 @@ module.exports = {
     max--;
     min++;
     return Math.floor(Math.random() * (max + 1 - min)) + min;
+  },
+  playmusic: (client, connection)=> {
+    play(client, connection);
   }
+}
+function play(client, connection) {
+  let dispatcher = connection.play(ytdl(client.queue[0], {
+    filter: 'audioonly', quality: 'highestaudio', highWaterMark: 1<<25, liveBuffer: 50000
+  }));
+  dispatcher.on('finish',
+    ()=> {
+      if (client.loop == 0) {
+        client.queue.shift();
+        client.queue_author.shift();
+        client.queue_second.shift();
+        client.queue_titles.shift();
+      }
+      if (client.loop == 2) {
+        client.queue.push(client.queue[0]);
+        client.queue_author.push(client.queue_author[0]);
+        client.queue_second.push(client.queue_second[0]);
+        client.queue_titles.push(client.queue_titles[0]);
+        client.queue.shift();
+        client.queue_author.shift();
+        client.queue_second.shift();
+        client.queue_titles.shift();
+      }
+      if (client.queue.length == 0) {
+        connection.disconnect();
+      } else {
+        play(client, connection);
+      }
+    });
 }

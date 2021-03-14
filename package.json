@@ -5,7 +5,10 @@
   "main": "index.js",
   "dependencies": {
     "discord.js": "^12.5.1",
-    "fs": "^0.0.1-security"
+    "fluent-ffmpeg": "^2.1.2",
+    "fs": "^0.0.1-security",
+    "ytdl-core": "^4.5.0",
+    "ytpl": "^2.0.5"
   },
   "devDependencies": {},
   "scripts": {
