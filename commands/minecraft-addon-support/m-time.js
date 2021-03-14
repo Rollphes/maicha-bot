@@ -7,7 +7,7 @@ module.exports = {
             if (isNaN(args[0]) == false) {
                 message.channel.send(`variable.time = variable.time < ${args[0]} ? variable.time + 1:0; return variable.time == 0;`);
             } else {
-                message.channel.send("\`!m-time [数値]\`で実行してね!!")
+                message.channel.send("\`m!m-time [数値]\`で実行してね!!")
             }
         }
     }

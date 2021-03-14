@@ -4,7 +4,7 @@ const {
 let roleColor = "";
 module.exports = {
   name: "say",
-  description: "m!say `文字`でbotが喋べります。！\nm!say embed `文字`にするとrichembedで送ります。！",
+  description: "m!say `文字`でbotが喋ります。\nm!say embed `文字`にするとrichembedで送ります。",
   usage: "<input>",
   run: (client, message, args) => {
     message.delete({
