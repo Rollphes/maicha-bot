@@ -25,7 +25,7 @@ module.exports = {
 }
 function play(client, connection) {
   let dispatcher = connection.play(ytdl(client.queue[0], {
-    filter: 'audioonly', quality: 'highestaudio', highWaterMark: 1<<25, liveBuffer: 50000
+    filter: 'audioonly'
   }));
   dispatcher.on('finish',
     ()=> {
