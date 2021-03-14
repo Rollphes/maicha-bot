@@ -10,6 +10,13 @@ const client = new Client({
 client.commands = new Collection();
 client.abbs = new Collection();
 client.categorys = new Array();
+
+client.loop = new Number;
+client.queue = new Array();
+client.queue_titles = new Array();
+client.queue_second = new Array();
+client.queue_author = new Array();
+client.loop = 0;
 const PORT = process.env.PORT;
 
 // Run the command loader
