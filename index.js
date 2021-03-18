@@ -27,7 +27,9 @@ const PORT = process.env.PORT;
 
 client.on('ready', () => {
   console.log('botを正常に起動しました');
-  client.user.setActivity('BOTが正常に起動したよ！', { type: 'PLAYING' };
+  client.user.setActivity('BOTが正常に起動したよ！', {
+    type: 'PLAYING'
+  });
 });
 
 
