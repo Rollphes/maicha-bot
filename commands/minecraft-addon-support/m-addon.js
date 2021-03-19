@@ -13,11 +13,11 @@ module.exports = {
         }
         let uuid_r = uuid();
         let uuid_b = uuid();
-        fs.writeFileSync(`manifest.json`, `{\n  "format_version": 1,\n  "header": {\n    "description": "${args[1]}",\n    "name": "${args[0]}",\n    "uuid": "${uuid_b}",\n    "version": [0, 0, 1]\n  },\n  "modules": [\n    {\n      "description": "${args[1]}",\n      "type": "data",\n      "uuid": "${uuid()}",\n      "version": [0, 0, 1]\n    }\n  ],\n  "dependencies": [\n    {\n      "uuid": "${uuid_r}",\n      "version": [0, 0, 1]\n    }\n  ]\n}`, 'utf8');
+        fs.writeFileSync(`manifest.json`, `{\n  "format_version": 1,\n  "header": {\n    "description": "${args[1]}",\n    "name": "${args[0]}",\n    "uuid": "${uuid_b}",\n    "version": [0, 0, 1]\n    "min_engine_version": [1, 2, 6]\n },\n  "modules": [\n    {\n      "description": "${args[1]}",\n      "type": "data",\n      "uuid": "${uuid()}",\n      "version": [0, 0, 1]\n    }\n  ],\n  "dependencies": [\n    {\n      "uuid": "${uuid_r}",\n      "version": [0, 0, 1]\n    }\n  ]\n}`, 'utf8');
         message.channel.send(`behavior`, { files: [`manifest.json`] })
             .then(() => {
                 fs.unlinkSync(`manifest.json`);
-                fs.writeFileSync(`manifest.json`, `{\n  "format_version": 1,\n  "header": {\n    "description": "${args[1]}",\n    "name": "${args[0]}",\n    "uuid": "${uuid_r}",\n    "version": [0, 0, 1]\n  },\n  "modules": [\n    {\n      "description": "${args[1]}",\n      "type": "resources",\n      "uuid": "${uuid()}",\n      "version": [0, 0, 1]\n    }\n  ],\n  "dependencies": [\n    {\n      "uuid": "${uuid_b}",\n      "version": [0, 0, 1]\n    }\n  ]\n}`, 'utf8');
+                fs.writeFileSync(`manifest.json`, `{\n  "format_version": 1,\n  "header": {\n    "description": "${args[1]}",\n    "name": "${args[0]}",\n    "uuid": "${uuid_r}",\n    "version": [0, 0, 1]\n   "min_engine_version": [1, 2, 6]\n   },\n  "modules": [\n    {\n      "description": "${args[1]}",\n      "type": "resources",\n      "uuid": "${uuid()}",\n      "version": [0, 0, 1]\n    }\n  ],\n  "dependencies": [\n    {\n      "uuid": "${uuid_b}",\n      "version": [0, 0, 1]\n    }\n  ]\n}`, 'utf8');
                 message.channel.send(`resource`, { files: [`manifest.json`] })
                     .then(() => { fs.unlinkSync(`manifest.json`); });
             });
