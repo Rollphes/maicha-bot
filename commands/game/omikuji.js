@@ -5,9 +5,9 @@ module.exports = {
   name: "omikuji",
   category: "game",
   description: "おみくじコマンドです。一日一回までですよ？",
-  abb: ["omi"],
+  abb: ['omi'],
   run: (client, message, args) => {
-    switch (rnd) {
+    switch (rnd(1, 7)) {
       case 1:
         message.channel.send("大凶ですよ.....。運の使い過ぎには気を付けてください....。");
         break;
