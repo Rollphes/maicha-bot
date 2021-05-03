@@ -57,7 +57,13 @@ client.on('message', async(message) => {
       if (!message.member) message.member = await message.guild.fetchMember(message);
       await command.run(client, message, args);
     } catch (e) {
-      message.channel.send(`コマンドファイルエラー:${e}`);
+      fs.writeFileSync(`error_log.txt`, e, 'utf8');
+      message.channel.send(`エラー発生`, {
+        files: [`error_log.txt`]
+      })
+      .then(() => {
+        fs.unlinkSync(`error_log.txt`);
+      });
       console.log(e);
     }
   }
