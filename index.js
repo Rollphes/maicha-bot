@@ -57,7 +57,7 @@ client.on('message', async(message) => {
       if (!message.member) message.member = await message.guild.fetchMember(message);
       await command.run(client, message, args);
     } catch (e) {
-      fs.writeFileSync(`error_log.txt`, "エラー名："+e.name+"\nファイル名：" + e.fileName + "\n行番号：" + e.lineNumber+"\nエラーメッセージ："+e.message, 'utf8');
+      fs.writeFileSync(`error_log.txt`, `エラー名：${e.name}\nファイル名:${e.fileName}\n行番号：${e.lineNumber}\nエラーメッセージ:${e.message}`, 'utf8');
       message.channel.send(`エラー発生`, {
         files: [`error_log.txt`]
       })
